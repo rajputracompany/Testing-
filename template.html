@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10100e">
+<title>The Life When She Disappeared · Rhethim Das</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Newsreader:opsz,wght@6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#10100e;--ink:#efece4;--mute:#8c8a82;--line:#2a2a26;--sans:'Inter',system-ui,sans-serif;--serif:'Newsreader',Georgia,serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f4f1ea;--ink:#171713;--mute:#77746b;--line:#d9d5c9}}
+:root[data-theme="light"]{--bg:#f4f1ea;--ink:#171713;--mute:#77746b;--line:#d9d5c9}
+:root[data-theme="dark"]{--bg:#10100e;--ink:#efece4;--mute:#8c8a82;--line:#2a2a26}
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);display:flex;flex-direction:column;min-height:100vh;padding:0 clamp(24px,6vw,96px)}
+main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:12vh 0 6vh;max-width:1000px}
+.v{display:none;animation:in .7s ease both}
+.v.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+h1{font:700 clamp(40px,8.5vw,112px)/1.02 var(--sans);letter-spacing:-.04em;margin:0 0 .4em}
+p{font-size:clamp(17px,2vw,22px);line-height:1.5;color:var(--mute);margin:0}
+a,button.l{color:var(--ink);font:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:none;transition:opacity .2s}
+a:hover,button.l:hover{opacity:.55}
+p button.l{font-weight:500}
+.big{font:700 clamp(26px,4.6vw,56px)/1.15 var(--sans);letter-spacing:-.03em;color:var(--ink);margin:0 0 .5em}
+.big span{color:var(--mute)}
+.nav{display:flex;gap:20px;flex-wrap:wrap;margin:0 0 32px;font-size:15px;color:var(--mute)}
+.nav button.l{opacity:.5}.nav button.l:hover{opacity:1}.nav button.l.cur{opacity:1;font-weight:700}
+.read{font:400 var(--fs,21px)/1.8 var(--serif);max-width:60ch;color:var(--ink)}
+.read h2{font:700 15px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0 0 1.4em}
+.read p{font:inherit;color:inherit;margin:0 0 1.2em}
+.bio p{max-width:36em;margin:0 0 1em;font-size:clamp(16px,1.8vw,19px)}
+#writer{max-height:none}
+.bar{display:flex;gap:22px;font-size:15px;margin-top:36px;color:var(--mute)}
+footer{padding:0 0 28px;font-size:14px;color:var(--mute)}
+main,footer{opacity:0;pointer-events:none;transition:opacity .9s}
+body.shown main,body.shown footer{opacity:1;pointer-events:auto}
+#bw{position:fixed;left:50%;top:50%;width:200px;height:280px;transform:translate(-50%,-50%) scale(1);transition:left 1.4s cubic-bezier(.7,0,.2,1),top 1.4s cubic-bezier(.7,0,.2,1),transform 1.4s cubic-bezier(.7,0,.2,1),opacity .5s;perspective:1200px;z-index:5;cursor:pointer}
+#bw.docked{left:82%;transform:translate(-50%,-50%) scale(.55)}
+.book{position:relative;width:200px;height:280px;transform-style:preserve-3d}
+.f{position:absolute;backface-visibility:hidden}
+.front,.back{width:200px;height:280px;border-radius:2px 6px 6px 2px}
+.front{transform:translateZ(22px);background:#14130f;border:1px solid #efece4;padding:24px 18px;display:flex;flex-direction:column;justify-content:space-between;color:#efece4;box-shadow:inset 0 0 40px rgba(0,0,0,.6)}
+.front h2{font:700 26px/1.1 var(--sans);letter-spacing:-.03em;margin:0}
+.front small{font-size:10px;letter-spacing:.25em;opacity:.7}
+.back{transform:rotateY(180deg) translateZ(22px);background:#14130f}
+.spine{width:44px;height:280px;left:-22px;transform:rotateY(-90deg);background:#1d1b16;border-right:1px solid #efece4}
+.pages{width:44px;height:272px;top:4px;left:178px;transform:rotateY(90deg);background:repeating-linear-gradient(90deg,#efece4 0 2px,#cfcabb 2px 3px)}
+.top,.bot{width:200px;height:44px;left:0;background:repeating-linear-gradient(0deg,#efece4 0 2px,#cfcabb 2px 3px)}
+.top{top:-22px;transform:rotateX(90deg)}
+.bot{top:258px;transform:rotateX(-90deg)}
+.front{background:#14130f url(cover.jpg) center/cover no-repeat;padding:0;border:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+@media(min-width:761px){main{max-width:64%}}
+@media(max-width:760px){#bw.docked{left:50%;top:86%;transform:translate(-50%,-50%) scale(.38)}main{padding-bottom:24vh}body.reading #bw{opacity:0;pointer-events:none}}
+#pg{height:1px;background:var(--line);margin-bottom:28px;max-width:60ch}
+#pg i{display:block;height:1px;width:0;background:var(--ink);transition:width .4s}
+</style>
+</head>
+<body>
+<div id="bw" title="Tap the book" role="button" aria-label="Book"><div class="book" id="book">
+<div class="f front"></div>
+<div class="f back"></div><div class="f spine"></div><div class="f pages"></div><div class="f top"></div><div class="f bot"></div>
+</div></div>
+<main>
+ <section class="v on" id="q">
+  <h1>Ki chai tor,<br>kya chahiye tumko beh?</h1>
+  <p>Book? Whole book? Writer MC?<br>
+  <button class="l" data-go="reader">Book</button>? <button class="l" data-go="whole">Whole book</button>? <button class="l" data-go="writer">Writer</button>?</p>
+ </section>
+
+ <section class="v" id="reader">
+  <div class="nav"><button class="l" data-go="q">&larr; Back</button><span id="tabs" style="display:flex;gap:20px"></span><button class="l" id="fm">A&minus;</button><button class="l" id="fp">A+</button><button class="l" id="th">Light/Dark</button></div>
+  <div id="pg"><i></i></div>
+  <article class="read" id="txt"></article>
+  <div class="bar"><button class="l" id="pv">Previous</button><button class="l" id="nx">Next</button></div>
+ </section>
+
+ <section class="v" id="whole">
+  <h1 class="big">Nahi likha maine,<br><span>kyunki tum logo jaisa berozgar nahi hu mai.</span></h1>
+  <p>Agle saal phir try karna, tab complete hogi. Ab bhago.</p>
+  <p style="margin-top:28px"><button class="l" data-go="q">Bhaag raha hu</button></p>
+ </section>
+
+ <section class="v" id="writer">
+  <h1 class="big">Rhethim Das.</h1>
+  <div class="bio"><p>Rhethim Das is a Commerce student of Class 11 at Children&rsquo;s Foundation School and a young aspiring author with a passion for emotional and meaningful storytelling. Inspired by real-life experiences, imagination, and deep human emotions, he believes that stories have the power to connect people in ways ordinary conversations cannot.</p><p>Unlike most modern writers who draft their books on laptops with dozens of tabs open, Rhethim chose a simpler path: writing his book entirely on his phone, proving that creativity does not depend on expensive setups but on genuine passion and dedication. His writing style is influenced by introspective and philosophical works such as The Alchemist, blending emotion, realism, and self-discovery into his stories.</p><p>Apart from writing, he enjoys music, observing life deeply, and turning ordinary thoughts into meaningful ideas. Through his work, Rhethim hopes to create stories that stay in readers&rsquo; hearts long after the final page.</p></div>
+  <p style="margin-top:28px"><button class="l" data-go="q">&larr; Back</button></p>
+ </section>
+</main>
+<footer>&copy; 2026 Rhethim Das</footer>
+
+<script>
+// ===== BOOK TEXT (edit here) =====
+var CHAPTERS=__CHAPTERS__;
+// ================================
+var $=function(s){return document.querySelector(s)},cur=0,fs=21,tabs=$('#tabs');
+function go(v){document.querySelectorAll('.v').forEach(function(x){x.classList.remove('on')});$('#'+v).classList.add('on');document.body.classList.toggle('reading',v==='reader');if(v==='reader')show(cur);scrollTo(0,0)}
+document.addEventListener('click',function(e){var b=e.target.closest('[data-go]');if(b)go(b.dataset.go)});
+CHAPTERS.forEach(function(c,i){var b=document.createElement('button');b.className='l';b.textContent=i+1;b.onclick=function(){show(i)};tabs.appendChild(b)});
+function show(i){cur=i;var c=CHAPTERS[i],a=$('#txt');a.textContent='';var t=document.createElement('h2');t.textContent='Chapter '+(i+1)+' \u00b7 '+c.t.trim();a.appendChild(t);c.b.forEach(function(x){var p=document.createElement('p');p.textContent=x;a.appendChild(p)});[].forEach.call(tabs.children,function(b,k){b.classList.toggle('cur',k===i)});$('#pg i').style.width=((i+1)/CHAPTERS.length*100)+'%';scrollTo(0,0)}
+$('#pv').onclick=function(){if(cur>0)show(cur-1)};
+$('#nx').onclick=function(){if(cur<CHAPTERS.length-1)show(cur+1)};
+function size(d){fs=Math.max(16,Math.min(32,fs+d));$('#txt').style.setProperty('--fs',fs+'px')}
+$('#fm').onclick=function(){size(-2)};$('#fp').onclick=function(){size(2)};
+$('#th').onclick=function(){var r=document.documentElement,l=getComputedStyle(r).getPropertyValue('--bg').trim()==='#f4f1ea';r.dataset.theme=l?'dark':'light'};
+// 3D book: spins in the center, drops to the right (laptop/tablet) or bottom (phone). Tap it to toggle.
+var bw=$('#bw'),book=$('#book'),ry=-720,mx=0,my=0,busy=true;
+function pose(){book.style.transform='rotateX('+(-8-my*16)+'deg) rotateY('+(ry+mx*25)+'deg)'}
+function anim(to,ms,cb){var from=ry,t0=performance.now();(function f(n){var p=Math.min((n-t0)/ms,1),e=1-Math.pow(1-p,3);ry=from+(to-from)*e;pose();if(p<1)requestAnimationFrame(f);else if(cb)cb()})(t0)}
+function dock(){busy=true;bw.classList.add('docked');document.body.classList.add('shown');anim(ry+360,1400,function(){busy=false})}
+function hero(){busy=true;bw.classList.remove('docked');document.body.classList.remove('shown');anim(ry+360,1600,function(){busy=false})}
+addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;pose()});
+bw.addEventListener('click',function(){if(busy)return;bw.classList.contains('docked')?hero():dock()});
+pose();anim(-28,3000,dock);
+</script>
+</body>
+</html>
